@@ -555,7 +555,7 @@ void forward_convolutional_layer_gpu(convolutional_layer l, network_state state)
 
 
 #else
-    fill_ongpu(l.outputs*l.batch, 0, l.output_gpu, 1);
+    //fill_ongpu(l.outputs*l.batch, 0, l.output_gpu, 1);
 
     int i, j;
     int m = l.n / l.groups;
@@ -584,8 +584,8 @@ void forward_convolutional_layer_gpu(convolutional_layer l, network_state state)
                     state.workspace);       // output
 
             }
-            //gemm_ongpu(0, 0, m, n, k, 1., a, k, b, n, 1., c + i*m*n, n);
-            gemm_ongpu(0, 0, m, n, k, 1, a, k, b, n, 1, c, n);
+            gemm_ongpu(0, 0, m, n, k, 1, a, k, b, n, 0, c, n);
+            //gemm_ongpu(0, 0, m, n, k, 1, a, k, b, n, 1, c, n);
         }
     }
 
