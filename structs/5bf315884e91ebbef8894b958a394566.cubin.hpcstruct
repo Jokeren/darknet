@@ -1,0 +1,141 @@
+<?xml version="1.0"?>
+<!DOCTYPE HPCToolkitStructure [
+<!-- ******************************************************************** -->
+<!-- HPCToolkit Structure DTD                                             -->
+<!-- Version 4.7                                                          -->
+<!-- ******************************************************************** -->
+
+<!ELEMENT HPCToolkitStructure (LM)*>
+<!ATTLIST HPCToolkitStructure
+	version CDATA #REQUIRED
+	i       CDATA #REQUIRED
+	n       CDATA #IMPLIED>
+  <!-- Load module: -->
+  <!--   (i)d: unique identifier for cross referencing -->
+  <!--   (n)ame -->
+  <!--   (l)ine range: "beg-end" (inclusive range) -->
+  <!--   (v)ma-range-set: "{[beg-end), [beg-end)...}" -->
+  <!--   (t)arget: target function address -->
+  <!--   (d)evice: device name -->
+  <!ELEMENT LM (F|P)*>
+  <!ATTLIST LM
+	i CDATA #REQUIRED
+	n CDATA #REQUIRED
+	v CDATA #IMPLIED>
+  <!-- File: -->
+  <!ELEMENT F (P|L|S)*>
+  <!ATTLIST F
+	i CDATA #REQUIRED
+	n CDATA #REQUIRED>
+  <!-- Procedure: ln=link name (if different than name) -->
+  <!ELEMENT P (P|A|L|S|C)*>
+  <!ATTLIST P
+	i  CDATA #REQUIRED
+	n  CDATA #REQUIRED
+	ln CDATA #IMPLIED
+	l  CDATA #IMPLIED
+	s  CDATA #IMPLIED
+	v  CDATA #IMPLIED>
+  <!-- Alien: (f)ilename -->
+  <!ELEMENT A (A|L|S|C)*>
+  <!ATTLIST A
+	i CDATA #REQUIRED
+	f CDATA #IMPLIED
+	n CDATA #IMPLIED
+	ln CDATA #IMPLIED
+	l CDATA #IMPLIED
+	v CDATA #IMPLIED>
+  <!-- Loop -->
+  <!ELEMENT L (A|L|S|C)*>
+  <!ATTLIST L
+	i CDATA #REQUIRED
+	l CDATA #REQUIRED
+	f CDATA #IMPLIED
+	v CDATA #IMPLIED>
+  <!-- Statement -->
+  <!ELEMENT S EMPTY>
+  <!ATTLIST S
+	i CDATA #REQUIRED
+	l CDATA #REQUIRED
+	v CDATA #IMPLIED>
+  <!-- Callsite (a special Statement) -->
+  <!ELEMENT C (C)*>
+  <!ATTLIST C
+	i CDATA #REQUIRED
+	l CDATA #REQUIRED
+	v CDATA #IMPLIED
+	t CDATA #IMPLIED
+	d CDATA #IMPLIED>
+]>
+<HPCToolkitStructure i="0" version="4.7" n="">
+<LM i="2" n="/autofs/nccs-svm1_home1/kz21/Codes/darknet/hpctoolkit-darknet-measurements/cubins/5bf315884e91ebbef8894b958a394566.cubin" v="{}">
+  <F i="3" n="&lt;unknown file&gt; [5bf315884e91ebbef8894b958a394566.cubin]">
+    <P i="4" n="backward_local_avgpool_layer_kernel(int, int, int, int, int, int, int, int, float*, float*)" ln="_Z35backward_local_avgpool_layer_kerneliiiiiiiiPfS_" l="0" v="{[0x2680-0x2681)}">
+      <S i="5" l="0" v="{[0x2680-0x3b60)}"/>
+    </P>
+    <P i="6" n="$_Z35backward_local_avgpool_layer_kerneliiiiiiiiPfS_$__cuda_sm3x_div_rn_noftz_f32" l="0" v="{[0x3b60-0x3b61)}">
+      <S i="7" l="0" v="{[0x3b60-0x3cb0)}"/>
+    </P>
+    <P i="8" n="$_Z35backward_local_avgpool_layer_kerneliiiiiiiiPfS_$__cuda_sm3x_div_rn_noftz_f32_slowpath" l="0" v="{[0x3cb0-0x3cb1)}">
+      <S i="9" l="0" v="{[0x3cb0-0x4480)}"/>
+    </P>
+    <P i="10" n="forward_local_avgpool_layer_kernel(int, int, int, int, int, int, int, int, float*, float*)" ln="_Z34forward_local_avgpool_layer_kerneliiiiiiiiPfS_" l="0" v="{[0x4480-0x4481)}">
+      <S i="11" l="0" v="{[0x4480-0x5f50)}"/>
+    </P>
+    <P i="12" n="$_Z34forward_local_avgpool_layer_kerneliiiiiiiiPfS_$__cuda_sm3x_div_rn_noftz_f32" l="0" v="{[0x5f50-0x5f51)}">
+      <S i="13" l="0" v="{[0x5f50-0x60b0)}"/>
+    </P>
+    <P i="14" n="$_Z34forward_local_avgpool_layer_kerneliiiiiiiiPfS_$__cuda_sm3x_div_rn_noftz_f32_slowpath" l="0" v="{[0x60b0-0x60b1)}">
+      <S i="15" l="0" v="{[0x60b0-0x6880)}"/>
+    </P>
+    <P i="16" n="backward_maxpool_layer_kernel(int, int, int, int, int, int, int, int, float*, float*, int*)" ln="_Z29backward_maxpool_layer_kerneliiiiiiiiPfS_Pi" l="0" v="{[0x6880-0x6881)}">
+      <S i="17" l="0" v="{[0x6880-0x7560) [0x7ef0-0x7f50) [0x7f60-0x7f80)}"/>
+      <L i="18" l="0" f="&lt;unknown file&gt; [5bf315884e91ebbef8894b958a394566.cubin]" v="{[0x7560-0x7561)}">
+        <S i="19" l="0" v="{[0x7560-0x7a70) [0x7eb0-0x7ef0)}"/>
+        <L i="20" l="0" f="&lt;unknown file&gt; [5bf315884e91ebbef8894b958a394566.cubin]" v="{[0x7a70-0x7a71)}">
+          <S i="21" l="0" v="{[0x7a70-0x7eb0)}"/>
+        </L>
+      </L>
+      <L i="22" l="0" f="&lt;unknown file&gt; [5bf315884e91ebbef8894b958a394566.cubin]" v="{[0x7f50-0x7f51)}">
+        <S i="23" l="0" v="{[0x7f50-0x7f60)}"/>
+      </L>
+    </P>
+    <P i="24" n="forward_maxpool_layer_kernel(int, int, int, int, int, int, int, int, float*, float*, int*)" ln="_Z28forward_maxpool_layer_kerneliiiiiiiiPfS_Pi" l="0" v="{[0x7f80-0x7f81)}">
+      <S i="25" l="0" v="{[0x7f80-0x88c0) [0x8fd0-0x9060) [0x9070-0x9080)}"/>
+      <L i="26" l="0" f="&lt;unknown file&gt; [5bf315884e91ebbef8894b958a394566.cubin]" v="{[0x88c0-0x88c1)}">
+        <S i="27" l="0" v="{[0x88c0-0x8d30) [0x8fc0-0x8fd0)}"/>
+        <L i="28" l="0" f="&lt;unknown file&gt; [5bf315884e91ebbef8894b958a394566.cubin]" v="{[0x8d30-0x8d31)}">
+          <S i="29" l="0" v="{[0x8d30-0x8fc0)}"/>
+        </L>
+      </L>
+      <L i="30" l="0" f="&lt;unknown file&gt; [5bf315884e91ebbef8894b958a394566.cubin]" v="{[0x9060-0x9061)}">
+        <S i="31" l="0" v="{[0x9060-0x9070)}"/>
+      </L>
+    </P>
+    <P i="32" n="backward_maxpool_depth_layer_kernel(int, int, int, int, int, float*, float*, int*)" ln="_Z35backward_maxpool_depth_layer_kerneliiiiiPfS_Pi" l="0" v="{[0x9080-0x9081)}">
+      <S i="33" l="0" v="{[0x9080-0x91b0) [0x91c0-0x9200)}"/>
+      <L i="34" l="0" f="&lt;unknown file&gt; [5bf315884e91ebbef8894b958a394566.cubin]" v="{[0x91b0-0x91b1)}">
+        <S i="35" l="0" v="{[0x91b0-0x91c0)}"/>
+      </L>
+    </P>
+    <P i="36" n="forward_maxpool_depth_layer_kernel(int, int, int, int, int, int, float*, float*, int*)" ln="_Z34forward_maxpool_depth_layer_kerneliiiiiiPfS_Pi" l="0" v="{[0x9200-0x9201)}">
+      <S i="37" l="0" v="{[0x9200-0x9890) [0x9a60-0x9a70) [0x9c00-0x9c10) [0x9c20-0x9c80)}"/>
+      <L i="38" l="0" f="&lt;unknown file&gt; [5bf315884e91ebbef8894b958a394566.cubin]" v="{[0x9890-0x9891)}">
+        <S i="39" l="0" v="{[0x9890-0x9950) [0x9a10-0x9a60)}"/>
+        <L i="40" l="0" f="&lt;unknown file&gt; [5bf315884e91ebbef8894b958a394566.cubin]" v="{[0x9950-0x9951)}">
+          <S i="41" l="0" v="{[0x9950-0x9a10)}"/>
+        </L>
+      </L>
+      <L i="42" l="0" f="&lt;unknown file&gt; [5bf315884e91ebbef8894b958a394566.cubin]" v="{[0x9a70-0x9a71)}">
+        <S i="43" l="0" v="{[0x9a70-0x9b10) [0x9bc0-0x9c00)}"/>
+        <L i="44" l="0" f="&lt;unknown file&gt; [5bf315884e91ebbef8894b958a394566.cubin]" v="{[0x9b10-0x9b11)}">
+          <S i="45" l="0" v="{[0x9b10-0x9bc0)}"/>
+        </L>
+      </L>
+      <L i="46" l="0" f="&lt;unknown file&gt; [5bf315884e91ebbef8894b958a394566.cubin]" v="{[0x9c10-0x9c11)}">
+        <S i="47" l="0" v="{[0x9c10-0x9c20)}"/>
+      </L>
+    </P>
+  </F>
+</LM>
+</HPCToolkitStructure>

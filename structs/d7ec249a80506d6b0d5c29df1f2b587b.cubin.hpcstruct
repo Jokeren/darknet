@@ -1,0 +1,263 @@
+<?xml version="1.0"?>
+<!DOCTYPE HPCToolkitStructure [
+<!-- ******************************************************************** -->
+<!-- HPCToolkit Structure DTD                                             -->
+<!-- Version 4.7                                                          -->
+<!-- ******************************************************************** -->
+
+<!ELEMENT HPCToolkitStructure (LM)*>
+<!ATTLIST HPCToolkitStructure
+	version CDATA #REQUIRED
+	i       CDATA #REQUIRED
+	n       CDATA #IMPLIED>
+  <!-- Load module: -->
+  <!--   (i)d: unique identifier for cross referencing -->
+  <!--   (n)ame -->
+  <!--   (l)ine range: "beg-end" (inclusive range) -->
+  <!--   (v)ma-range-set: "{[beg-end), [beg-end)...}" -->
+  <!--   (t)arget: target function address -->
+  <!--   (d)evice: device name -->
+  <!ELEMENT LM (F|P)*>
+  <!ATTLIST LM
+	i CDATA #REQUIRED
+	n CDATA #REQUIRED
+	v CDATA #IMPLIED>
+  <!-- File: -->
+  <!ELEMENT F (P|L|S)*>
+  <!ATTLIST F
+	i CDATA #REQUIRED
+	n CDATA #REQUIRED>
+  <!-- Procedure: ln=link name (if different than name) -->
+  <!ELEMENT P (P|A|L|S|C)*>
+  <!ATTLIST P
+	i  CDATA #REQUIRED
+	n  CDATA #REQUIRED
+	ln CDATA #IMPLIED
+	l  CDATA #IMPLIED
+	s  CDATA #IMPLIED
+	v  CDATA #IMPLIED>
+  <!-- Alien: (f)ilename -->
+  <!ELEMENT A (A|L|S|C)*>
+  <!ATTLIST A
+	i CDATA #REQUIRED
+	f CDATA #IMPLIED
+	n CDATA #IMPLIED
+	ln CDATA #IMPLIED
+	l CDATA #IMPLIED
+	v CDATA #IMPLIED>
+  <!-- Loop -->
+  <!ELEMENT L (A|L|S|C)*>
+  <!ATTLIST L
+	i CDATA #REQUIRED
+	l CDATA #REQUIRED
+	f CDATA #IMPLIED
+	v CDATA #IMPLIED>
+  <!-- Statement -->
+  <!ELEMENT S EMPTY>
+  <!ATTLIST S
+	i CDATA #REQUIRED
+	l CDATA #REQUIRED
+	v CDATA #IMPLIED>
+  <!-- Callsite (a special Statement) -->
+  <!ELEMENT C (C)*>
+  <!ATTLIST C
+	i CDATA #REQUIRED
+	l CDATA #REQUIRED
+	v CDATA #IMPLIED
+	t CDATA #IMPLIED
+	d CDATA #IMPLIED>
+]>
+<HPCToolkitStructure i="0" version="4.7" n="">
+<LM i="2" n="/autofs/nccs-svm1_home1/kz21/Codes/darknet/hpctoolkit-darknet-measurements/cubins/d7ec249a80506d6b0d5c29df1f2b587b.cubin" v="{}">
+  <F i="3" n="&lt;unknown file&gt; [d7ec249a80506d6b0d5c29df1f2b587b.cubin]">
+    <P i="4" n="gradient_array_normalize_channels_kernel(float*, int, int, int, int, float*)" ln="_Z40gradient_array_normalize_channels_kernelPfiiiiS_" l="0" v="{[0x8780-0x8781)}">
+      <S i="5" l="0" v="{[0x8780-0x8d50) [0x8ff0-0x9000) [0x9010-0x9080)}"/>
+      <L i="6" l="0" f="&lt;unknown file&gt; [d7ec249a80506d6b0d5c29df1f2b587b.cubin]" v="{[0x8d50-0x8d51)}">
+        <S i="7" l="0" v="{[0x8d50-0x8ff0)}"/>
+      </L>
+      <L i="8" l="0" f="&lt;unknown file&gt; [d7ec249a80506d6b0d5c29df1f2b587b.cubin]" v="{[0x9000-0x9001)}">
+        <S i="9" l="0" v="{[0x9000-0x9010)}"/>
+      </L>
+    </P>
+    <P i="10" n="gradient_array_normalize_channels_softmax_kernel(float*, int, int, int, int, float*)" ln="_Z48gradient_array_normalize_channels_softmax_kernelPfiiiiS_" l="0" v="{[0x9080-0x9081)}">
+      <S i="11" l="0" v="{[0x9080-0x9660) [0x9980-0x9990) [0x99a0-0x9a00)}"/>
+      <L i="12" l="0" f="&lt;unknown file&gt; [d7ec249a80506d6b0d5c29df1f2b587b.cubin]" v="{[0x9660-0x9661)}">
+        <S i="13" l="0" v="{[0x9660-0x9980)}"/>
+      </L>
+      <L i="14" l="0" f="&lt;unknown file&gt; [d7ec249a80506d6b0d5c29df1f2b587b.cubin]" v="{[0x9990-0x9991)}">
+        <S i="15" l="0" v="{[0x9990-0x99a0)}"/>
+      </L>
+    </P>
+    <P i="16" n="activate_array_normalize_channels_softmax_kernel(float*, int, int, int, int, float*, int)" ln="_Z48activate_array_normalize_channels_softmax_kernelPfiiiiS_i" l="0" v="{[0x9a00-0x9a01)}">
+      <S i="17" l="0" v="{[0x9a00-0xc520)}"/>
+    </P>
+    <P i="18" n="$_Z48activate_array_normalize_channels_softmax_kernelPfiiiiS_i$__cuda_sm3x_div_rn_noftz_f32" l="0" v="{[0xc520-0xc521)}">
+      <S i="19" l="0" v="{[0xc520-0xc6a0)}"/>
+    </P>
+    <P i="20" n="$_Z48activate_array_normalize_channels_softmax_kernelPfiiiiS_i$__cuda_sm3x_div_rn_noftz_f32_slowpath" l="0" v="{[0xc6a0-0xc6a1)}">
+      <S i="21" l="0" v="{[0xc6a0-0xce80)}"/>
+    </P>
+    <P i="22" n="activate_array_normalize_channels_kernel(float*, int, int, int, int, float*)" ln="_Z40activate_array_normalize_channels_kernelPfiiiiS_" l="0" v="{[0xce80-0xce81)}">
+      <S i="23" l="0" v="{[0xce80-0xe620)}"/>
+    </P>
+    <P i="24" n="$_Z40activate_array_normalize_channels_kernelPfiiiiS_$__cuda_sm3x_div_rn_noftz_f32" l="0" v="{[0xe620-0xe621)}">
+      <S i="25" l="0" v="{[0xe620-0xe790)}"/>
+    </P>
+    <P i="26" n="$_Z40activate_array_normalize_channels_kernelPfiiiiS_$__cuda_sm3x_div_rn_noftz_f32_slowpath" l="0" v="{[0xe790-0xe791)}">
+      <S i="27" l="0" v="{[0xe790-0xef00)}"/>
+    </P>
+    <P i="28" n="gradient_array_relu6_kernel(float*, int, float*)" ln="_Z27gradient_array_relu6_kernelPfiS_" l="0" v="{[0xef00-0xef01)}">
+      <S i="29" l="0" v="{[0xef00-0xf010) [0xf020-0xf080)}"/>
+      <L i="30" l="0" f="&lt;unknown file&gt; [d7ec249a80506d6b0d5c29df1f2b587b.cubin]" v="{[0xf010-0xf011)}">
+        <S i="31" l="0" v="{[0xf010-0xf020)}"/>
+      </L>
+    </P>
+    <P i="32" n="gradient_array_relu_kernel(float*, int, float*)" ln="_Z26gradient_array_relu_kernelPfiS_" l="0" v="{[0xf080-0xf081)}">
+      <S i="33" l="0" v="{[0xf080-0xf180) [0xf190-0xf200)}"/>
+      <L i="34" l="0" f="&lt;unknown file&gt; [d7ec249a80506d6b0d5c29df1f2b587b.cubin]" v="{[0xf180-0xf181)}">
+        <S i="35" l="0" v="{[0xf180-0xf190)}"/>
+      </L>
+    </P>
+    <P i="36" n="gradient_array_hardtan_kernel(float*, int, float*)" ln="_Z29gradient_array_hardtan_kernelPfiS_" l="0" v="{[0xf200-0xf201)}">
+      <S i="37" l="0" v="{[0xf200-0xf320) [0xf330-0xf380)}"/>
+      <L i="38" l="0" f="&lt;unknown file&gt; [d7ec249a80506d6b0d5c29df1f2b587b.cubin]" v="{[0xf320-0xf321)}">
+        <S i="39" l="0" v="{[0xf320-0xf330)}"/>
+      </L>
+    </P>
+    <P i="40" n="gradient_array_tanh_kernel(float*, int, float*)" ln="_Z26gradient_array_tanh_kernelPfiS_" l="0" v="{[0xf380-0xf381)}">
+      <S i="41" l="0" v="{[0xf380-0xf480) [0xf490-0xf500)}"/>
+      <L i="42" l="0" f="&lt;unknown file&gt; [d7ec249a80506d6b0d5c29df1f2b587b.cubin]" v="{[0xf480-0xf481)}">
+        <S i="43" l="0" v="{[0xf480-0xf490)}"/>
+      </L>
+    </P>
+    <P i="44" n="gradient_array_logistic_kernel(float*, int, float*)" ln="_Z30gradient_array_logistic_kernelPfiS_" l="0" v="{[0xf500-0xf501)}">
+      <S i="45" l="0" v="{[0xf500-0xf610) [0xf620-0xf680)}"/>
+      <L i="46" l="0" f="&lt;unknown file&gt; [d7ec249a80506d6b0d5c29df1f2b587b.cubin]" v="{[0xf610-0xf611)}">
+        <S i="47" l="0" v="{[0xf610-0xf620)}"/>
+      </L>
+    </P>
+    <P i="48" n="gradient_array_selu_kernel(float*, int, float*)" ln="_Z26gradient_array_selu_kernelPfiS_" l="0" v="{[0xf680-0xf681)}">
+      <S i="49" l="0" v="{[0xf680-0xf7d0) [0xf7e0-0xf800)}"/>
+      <L i="50" l="0" f="&lt;unknown file&gt; [d7ec249a80506d6b0d5c29df1f2b587b.cubin]" v="{[0xf7d0-0xf7d1)}">
+        <S i="51" l="0" v="{[0xf7d0-0xf7e0)}"/>
+      </L>
+    </P>
+    <P i="52" n="gradient_array_leaky_kernel(float*, int, float*)" ln="_Z27gradient_array_leaky_kernelPfiS_" l="0" v="{[0xf800-0xf801)}">
+      <S i="53" l="0" v="{[0xf800-0xf920) [0xf930-0xf980)}"/>
+      <L i="54" l="0" f="&lt;unknown file&gt; [d7ec249a80506d6b0d5c29df1f2b587b.cubin]" v="{[0xf920-0xf921)}">
+        <S i="55" l="0" v="{[0xf920-0xf930)}"/>
+      </L>
+    </P>
+    <P i="56" n="gradient_array_mish_kernel(int, float*, float*)" ln="_Z26gradient_array_mish_kerneliPfS_" l="0" v="{[0xf980-0xf981)}">
+      <S i="57" l="0" v="{[0xf980-0x100e0) [0x100f0-0x10100)}"/>
+      <L i="58" l="0" f="&lt;unknown file&gt; [d7ec249a80506d6b0d5c29df1f2b587b.cubin]" v="{[0x100e0-0x100e1)}">
+        <S i="59" l="0" v="{[0x100e0-0x100f0)}"/>
+      </L>
+    </P>
+    <P i="60" n="gradient_array_swish_kernel(float*, int, float*, float*)" ln="_Z27gradient_array_swish_kernelPfiS_S_" l="0" v="{[0x10100-0x10101)}">
+      <S i="61" l="0" v="{[0x10100-0x10250) [0x10260-0x10280)}"/>
+      <L i="62" l="0" f="&lt;unknown file&gt; [d7ec249a80506d6b0d5c29df1f2b587b.cubin]" v="{[0x10250-0x10251)}">
+        <S i="63" l="0" v="{[0x10250-0x10260)}"/>
+      </L>
+    </P>
+    <P i="64" n="gradient_array_kernel(float*, int, ACTIVATION, float*)" ln="_Z21gradient_array_kernelPfi10ACTIVATIONS_" l="0" v="{[0x10280-0x10281)}">
+      <S i="65" l="0" v="{[0x10280-0x10af0)}"/>
+      <L i="66" l="0" f="&lt;unknown file&gt; [d7ec249a80506d6b0d5c29df1f2b587b.cubin]" v="{[0x10af0-0x10af1)}">
+        <S i="67" l="0" v="{[0x10af0-0x10b00)}"/>
+      </L>
+    </P>
+    <P i="68" n="activate_array_relu6_kernel(float*, int)" ln="_Z27activate_array_relu6_kernelPfi" l="0" v="{[0x10b00-0x10b01)}">
+      <S i="69" l="0" v="{[0x10b00-0x10c00) [0x10c10-0x10c80)}"/>
+      <L i="70" l="0" f="&lt;unknown file&gt; [d7ec249a80506d6b0d5c29df1f2b587b.cubin]" v="{[0x10c00-0x10c01)}">
+        <S i="71" l="0" v="{[0x10c00-0x10c10)}"/>
+      </L>
+    </P>
+    <P i="72" n="activate_array_relu_kernel(float*, int)" ln="_Z26activate_array_relu_kernelPfi" l="0" v="{[0x10c80-0x10c81)}">
+      <S i="73" l="0" v="{[0x10c80-0x10d60) [0x10d70-0x10d80)}"/>
+      <L i="74" l="0" f="&lt;unknown file&gt; [d7ec249a80506d6b0d5c29df1f2b587b.cubin]" v="{[0x10d60-0x10d61)}">
+        <S i="75" l="0" v="{[0x10d60-0x10d70)}"/>
+      </L>
+    </P>
+    <P i="76" n="activate_array_hardtan_kernel(float*, int)" ln="_Z29activate_array_hardtan_kernelPfi" l="0" v="{[0x10d80-0x10d81)}">
+      <S i="77" l="0" v="{[0x10d80-0x10e80) [0x10e90-0x10f00)}"/>
+      <L i="78" l="0" f="&lt;unknown file&gt; [d7ec249a80506d6b0d5c29df1f2b587b.cubin]" v="{[0x10e80-0x10e81)}">
+        <S i="79" l="0" v="{[0x10e80-0x10e90)}"/>
+      </L>
+    </P>
+    <P i="80" n="activate_array_tanh_kernel(float*, int)" ln="_Z26activate_array_tanh_kernelPfi" l="0" v="{[0x10f00-0x10f01)}">
+      <S i="81" l="0" v="{[0x10f00-0x11120)}"/>
+    </P>
+    <P i="82" n="$_Z26activate_array_tanh_kernelPfi$__cuda_sm3x_div_rn_noftz_f32" l="0" v="{[0x11120-0x11121)}">
+      <S i="83" l="0" v="{[0x11120-0x112a0)}"/>
+    </P>
+    <P i="84" n="$_Z26activate_array_tanh_kernelPfi$__cuda_sm3x_div_rn_noftz_f32_slowpath" l="0" v="{[0x112a0-0x112a1)}">
+      <S i="85" l="0" v="{[0x112a0-0x11980)}"/>
+    </P>
+    <P i="86" n="activate_array_logistic_kernel(float*, int)" ln="_Z30activate_array_logistic_kernelPfi" l="0" v="{[0x11980-0x11981)}">
+      <S i="87" l="0" v="{[0x11980-0x11b60) [0x11b70-0x11c20)}"/>
+      <C i="88" l="0" v="{[0x11b60-0x11b70)}" t="0x11c20" d="NVIDIA sm_70"/>
+    </P>
+    <P i="89" n="$_Z30activate_array_logistic_kernelPfi$__cuda_sm20_rcp_rn_f32_slowpath" l="0" v="{[0x11c20-0x11c21)}">
+      <S i="90" l="0" v="{[0x11c20-0x11fa0) [0x11fb0-0x12000)}"/>
+      <L i="91" l="0" f="&lt;unknown file&gt; [d7ec249a80506d6b0d5c29df1f2b587b.cubin]" v="{[0x11fa0-0x11fa1)}">
+        <S i="92" l="0" v="{[0x11fa0-0x11fb0)}"/>
+      </L>
+    </P>
+    <P i="93" n="activate_array_selu_kernel(float*, int)" ln="_Z26activate_array_selu_kernelPfi" l="0" v="{[0x12000-0x12001)}">
+      <S i="94" l="0" v="{[0x12000-0x12220) [0x12230-0x12280)}"/>
+      <L i="95" l="0" f="&lt;unknown file&gt; [d7ec249a80506d6b0d5c29df1f2b587b.cubin]" v="{[0x12220-0x12221)}">
+        <S i="96" l="0" v="{[0x12220-0x12230)}"/>
+      </L>
+    </P>
+    <P i="97" n="activate_array_leaky_kernel(float*, int)" ln="_Z27activate_array_leaky_kernelPfi" l="0" v="{[0x12280-0x12281)}">
+      <S i="98" l="0" v="{[0x12280-0x12360) [0x12370-0x12380)}"/>
+      <L i="99" l="0" f="&lt;unknown file&gt; [d7ec249a80506d6b0d5c29df1f2b587b.cubin]" v="{[0x12360-0x12361)}">
+        <S i="100" l="0" v="{[0x12360-0x12370)}"/>
+      </L>
+    </P>
+    <P i="101" n="activate_array_mish_kernel(float*, int, float*, float*)" ln="_Z26activate_array_mish_kernelPfiS_S_" l="0" v="{[0x12380-0x12381)}">
+      <S i="102" l="0" v="{[0x12380-0x12930)}"/>
+    </P>
+    <P i="103" n="$_Z26activate_array_mish_kernelPfiS_S_$__cuda_sm3x_div_rn_noftz_f32" l="0" v="{[0x12930-0x12931)}">
+      <S i="104" l="0" v="{[0x12930-0x12a90)}"/>
+    </P>
+    <P i="105" n="$_Z26activate_array_mish_kernelPfiS_S_$__cuda_sm3x_div_rn_noftz_f32_slowpath" l="0" v="{[0x12a90-0x12a91)}">
+      <S i="106" l="0" v="{[0x12a90-0x13180)}"/>
+    </P>
+    <P i="107" n="activate_array_swish_kernel(float*, int, float*, float*)" ln="_Z27activate_array_swish_kernelPfiS_S_" l="0" v="{[0x13180-0x13181)}">
+      <S i="108" l="0" v="{[0x13180-0x13380) [0x13390-0x13480)}"/>
+      <C i="109" l="0" v="{[0x13380-0x13390)}" t="0x13480" d="NVIDIA sm_70"/>
+    </P>
+    <P i="110" n="$_Z27activate_array_swish_kernelPfiS_S_$__cuda_sm20_rcp_rn_f32_slowpath" l="0" v="{[0x13480-0x13481)}">
+      <S i="111" l="0" v="{[0x13480-0x137e0) [0x137f0-0x13800)}"/>
+      <L i="112" l="0" f="&lt;unknown file&gt; [d7ec249a80506d6b0d5c29df1f2b587b.cubin]" v="{[0x137e0-0x137e1)}">
+        <S i="113" l="0" v="{[0x137e0-0x137f0)}"/>
+      </L>
+    </P>
+    <P i="114" n="activate_array_kernel(float*, int, ACTIVATION)" ln="_Z21activate_array_kernelPfi10ACTIVATION" l="0" v="{[0x13800-0x13801)}">
+      <S i="115" l="0" v="{[0x13800-0x147c0)}"/>
+    </P>
+    <P i="116" n="$_Z21activate_array_kernelPfi10ACTIVATION$__cuda_sm20_rcp_rn_f32_slowpath" l="0" v="{[0x147c0-0x147c1)}">
+      <S i="117" l="0" v="{[0x147c0-0x14b20)}"/>
+    </P>
+    <P i="118" n="$_Z21activate_array_kernelPfi10ACTIVATION$__cuda_sm3x_div_rn_noftz_f32" l="0" v="{[0x14b20-0x14b21)}">
+      <S i="119" l="0" v="{[0x14b20-0x14c80)}"/>
+    </P>
+    <P i="120" n="$_Z21activate_array_kernelPfi10ACTIVATION$__cuda_sm3x_div_rn_noftz_f32_slowpath" l="0" v="{[0x14c80-0x14c81)}">
+      <S i="121" l="0" v="{[0x14c80-0x15400)}"/>
+    </P>
+    <P i="122" n="binary_activate_array_kernel(float*, int, int, BINARY_ACTIVATION, float*)" ln="_Z28binary_activate_array_kernelPfii17BINARY_ACTIVATIONS_" l="0" v="{[0x15400-0x15401)}">
+      <S i="123" l="0" v="{[0x15400-0x15550) [0x15560-0x15580)}"/>
+      <L i="124" l="0" f="&lt;unknown file&gt; [d7ec249a80506d6b0d5c29df1f2b587b.cubin]" v="{[0x15550-0x15551)}">
+        <S i="125" l="0" v="{[0x15550-0x15560)}"/>
+      </L>
+    </P>
+    <P i="126" n="binary_gradient_array_kernel(float*, float*, int, int, BINARY_ACTIVATION, float*)" ln="_Z28binary_gradient_array_kernelPfS_ii17BINARY_ACTIVATIONS_" l="0" v="{[0x15580-0x15581)}">
+      <S i="127" l="0" v="{[0x15580-0x15720) [0x15730-0x15780)}"/>
+      <L i="128" l="0" f="&lt;unknown file&gt; [d7ec249a80506d6b0d5c29df1f2b587b.cubin]" v="{[0x15720-0x15721)}">
+        <S i="129" l="0" v="{[0x15720-0x15730)}"/>
+      </L>
+    </P>
+  </F>
+</LM>
+</HPCToolkitStructure>
